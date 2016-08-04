@@ -39,13 +39,12 @@ class PictureController extends Controller{
 	public function store(Request $request){
 		$picture = Picture::create([
 			'name' => $request->name,
-			'code' => $request->code,
 		]);
 
-		// сохранение самой картинки в свг (позже, потому что название строим на основе id)
+		// сохранение самой картинки в свг
 		file_put_contents(public_path().$picture->path_to_svg, $request->svg);
 
-		return redirect(action('PictureController@edit', [$picture->id]));
+		return redirect(action('HomeController@index'));
 	}
 
 	/**
@@ -83,7 +82,6 @@ class PictureController extends Controller{
 
 		$picture->update([
 			'name' => $request->name,
-			'code' => $request->code,
 		]);
 
 		return back();

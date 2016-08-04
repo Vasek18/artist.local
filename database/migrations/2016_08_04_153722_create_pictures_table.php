@@ -13,7 +13,6 @@ class CreatePicturesTable extends Migration{
 		Schema::create('pictures', function (Blueprint $table){
 			$table->increments('id');
 			$table->string('name');
-			$table->string('code')->nullable();
 			$table->timestamps();
 		});
 	}

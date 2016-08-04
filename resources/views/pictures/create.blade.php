@@ -36,17 +36,6 @@
                                        required
                                        id="name">
                             </div>
-                            {{-- <div class="form-group">
-                                 <label class=" control-label"
-                                        for="code">Код
-                                 </label>
-                                 <input type="text"
-                                        class="form-control"
-                                        name="code"
-                                        value="{{ old('code') }}"
-                                        required
-                                        id="code">
-                             </div>--}}
                             <div class="form-group">
                                 <label class=" control-label"
                                        for="svg">Картинка
@@ -64,7 +53,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div class="col-md-6 col-md-offset-4">
+                                <div class="col-md-6 col-md-offset-5">
                                     <button type="submit"
                                             class="btn btn-primary"
                                             name="create">Создать

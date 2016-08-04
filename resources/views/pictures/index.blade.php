@@ -24,7 +24,8 @@
             <div class="col-sm-6 col-md-4">
                 <div class="thumbnail">
                     <a href="{{ action('PictureController@create') }}"
-                       class="btn btn-lg add-pic-btn">
+                       class="btn btn-lg add-pic-btn"
+                    title="Создать">
                         <span class="glyphicon glyphicon-plus"
                               aria-hidden="true"></span>
                     </a>
