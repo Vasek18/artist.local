@@ -13,8 +13,8 @@ class CreatePicturesTable extends Migration{
 		Schema::create('pictures', function (Blueprint $table){
 			$table->increments('id');
 			$table->string('name');
-			$table->string('code');
-			$table->string('pic_json');
+			$table->string('code')->nullable();
+			$table->string('pic_json')->nullable();
 			$table->timestamps();
 		});
 	}

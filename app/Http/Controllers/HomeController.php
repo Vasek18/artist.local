@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Picture;
 
-class PictureController extends Controller{
+class HomeController extends Controller{
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -27,7 +27,7 @@ class PictureController extends Controller{
 	 * @return \Illuminate\Http\Response
 	 */
 	public function create(){
-		return view("pictures.create");
+		//
 	}
 
 	/**
@@ -37,13 +37,7 @@ class PictureController extends Controller{
 	 * @return \Illuminate\Http\Response
 	 */
 	public function store(Request $request){
-		$picture = Picture::create([
-			'name'    => $request->name,
-			'code'    => $request->code,
-			'pic_json' => $request->pic_json,
-		]);
-
-		return redirect(action('PictureController@edit', [$picture->id]));
+		//
 	}
 
 	/**
@@ -53,6 +47,7 @@ class PictureController extends Controller{
 	 * @return \Illuminate\Http\Response
 	 */
 	public function show($id){
+		//
 	}
 
 	/**
@@ -61,12 +56,8 @@ class PictureController extends Controller{
 	 * @param  int $id
 	 * @return \Illuminate\Http\Response
 	 */
-	public function edit(Picture $picture){
-		$data = [
-			'picture' => $picture
-		];
-
-		return view("pictures.edit", $data);
+	public function edit($id){
+		//
 	}
 
 	/**
@@ -76,14 +67,8 @@ class PictureController extends Controller{
 	 * @param  int $id
 	 * @return \Illuminate\Http\Response
 	 */
-	public function update(Request $request, Picture $picture){
-		$picture->update([
-			'name'    => $request->name,
-			'code'    => $request->code,
-			'pic_json' => $request->pic_json,
-		]);
-
-		return back();
+	public function update(Request $request, $id){
+		//
 	}
 
 	/**
