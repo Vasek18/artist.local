@@ -35,3 +35,9 @@ canvas.draw{
 	-moz-box-shadow    : inset 0 0 10px 0 rgba(50, 50, 50, 0.75);
 	box-shadow         : inset 0 0 10px 0 rgba(50, 50, 50, 0.75);
 }
+.add-pic-btn{
+	padding : 150px 124px;
+}
+.add-pic-btn span{
+	font-size : 100px;
+}
