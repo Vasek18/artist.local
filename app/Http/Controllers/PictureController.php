@@ -38,10 +38,12 @@ class PictureController extends Controller{
 	 */
 	public function store(Request $request){
 		$picture = Picture::create([
-			'name'    => $request->name,
-			'code'    => $request->code,
-			'pic_json' => $request->pic_json,
+			'name' => $request->name,
+			'code' => $request->code,
 		]);
+
+		// сохранение самой картинки в свг (позже, потому что название строим на основе id)
+		file_put_contents(public_path().$picture->path_to_svg, $request->svg);
 
 		return redirect(action('PictureController@edit', [$picture->id]));
 	}
@@ -77,10 +79,11 @@ class PictureController extends Controller{
 	 * @return \Illuminate\Http\Response
 	 */
 	public function update(Request $request, Picture $picture){
+		file_put_contents(public_path().$picture->path_to_svg, $request->svg);
+
 		$picture->update([
-			'name'    => $request->name,
-			'code'    => $request->code,
-			'pic_json' => $request->pic_json,
+			'name' => $request->name,
+			'code' => $request->code,
 		]);
 
 		return back();

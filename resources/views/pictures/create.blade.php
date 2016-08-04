@@ -1,5 +1,9 @@
 @extends("app")
 
+@push('scripts')
+<script src="/js/draw.js"></script>
+@endpush
+
 @section("content")
     <div class="container-fluid">
         <div class="row">
@@ -32,27 +36,32 @@
                                        required
                                        id="name">
                             </div>
-                           {{-- <div class="form-group">
-                                <label class=" control-label"
-                                       for="code">Код
-                                </label>
-                                <input type="text"
-                                       class="form-control"
-                                       name="code"
-                                       value="{{ old('code') }}"
-                                       required
-                                       id="code">
-                            </div>--}}
+                            {{-- <div class="form-group">
+                                 <label class=" control-label"
+                                        for="code">Код
+                                 </label>
+                                 <input type="text"
+                                        class="form-control"
+                                        name="code"
+                                        value="{{ old('code') }}"
+                                        required
+                                        id="code">
+                             </div>--}}
                             <div class="form-group">
                                 <label class=" control-label"
-                                       for="pic_json">Картинка
+                                       for="svg">Картинка
                                 </label>
-                                <canvas width="500" height="500"></canvas>
-                                <input type="hidden"
-                                       class="form-control"
-                                       name="pic_json"
-                                       value="{{ old('pic_json') }}"
-                                       id="pic_json">
+                                <div>
+                                    <canvas width="726"
+                                            height="600"
+                                            id="picture"
+                                            class="draw"></canvas>
+                                    <input type="hidden"
+                                           class="form-control"
+                                           name="svg"
+                                           value="{{ old('svg') }}"
+                                           id="svg">
+                                </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">

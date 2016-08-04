@@ -14,7 +14,6 @@ class CreatePicturesTable extends Migration{
 			$table->increments('id');
 			$table->string('name');
 			$table->string('code')->nullable();
-			$table->string('pic_json')->nullable();
 			$table->timestamps();
 		});
 	}

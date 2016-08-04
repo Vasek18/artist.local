@@ -1,5 +1,9 @@
 @extends("app")
 
+@push('scripts')
+<script src="/js/draw.js"></script>
+@endpush
+
 @section("content")
     <div class="container-fluid">
         <div class="row">
@@ -46,15 +50,22 @@
                              </div>--}}
                             <div class="form-group">
                                 <label class=" control-label"
-                                       for="pic_json">Картинка
+                                       for="svg">Картинка
                                 </label>
-                                <canvas width="500"
-                                        height="500"></canvas>
+                                <canvas width="726"
+                                        height="600"
+                                        id="picture"
+                                        class="draw"></canvas>
                                 <input type="hidden"
                                        class="form-control"
-                                       name="pic_json"
-                                       value="{{ $picture->pic_json }}"
-                                       id="pic_json">
+                                       name="path_to_pic"
+                                       value="{{ $picture->path_to_svg }}"
+                                       id="path_to_pic">
+                                <input type="hidden"
+                                       class="form-control"
+                                       name="svg"
+                                       value="{{ $picture->svg }}"
+                                       id="svg">
                             </div>
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
