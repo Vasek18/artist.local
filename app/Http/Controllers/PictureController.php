@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Picture;
 
 class PictureController extends Controller{
 	/**
@@ -13,7 +14,11 @@ class PictureController extends Controller{
 	 * @return \Illuminate\Http\Response
 	 */
 	public function index(){
-		//
+		$data = [
+			'pictures' => Picture::all()
+		];
+
+		return view("pictures.index", $data);
 	}
 
 	/**
